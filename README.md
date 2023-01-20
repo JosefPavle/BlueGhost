@@ -1,0 +1,2 @@
+# BlueGhost
+Zadani pro BlueGhost
