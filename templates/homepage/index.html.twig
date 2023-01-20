@@ -19,6 +19,7 @@
             <td>{{ entry.surname }}</td>
             <td>{{ entry.phone }}</td>
             <td>{{ entry.email }}</td>
+            <td><a href="#" class="getDetail" data-personID="{{ entry.id }}">Details</a></td>
             <td><a href="{{ path('person_edit', {'name': entry.name, 'id': entry.id}) }}">Edit</a></td>
             <td><a href="{{ path('person_delete', {'name': entry.name, 'id': entry.id}) }}">Delete</a></td>
         </tr>
@@ -28,5 +29,9 @@
     </table>
 
     {{ pagerfanta(personQuery) }}
+
+    <div id="popup">
+
+    </div>
 
 {% endblock %}
