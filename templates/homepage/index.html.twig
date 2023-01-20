@@ -12,7 +12,7 @@
             <th>Email</th>
         </tr>
 
-    {% for entry in person %}
+    {% for entry in personQuery %}
 
         <tr>
             <td>{{ entry.name }}</td>
@@ -26,5 +26,7 @@
     {% endfor %}
 
     </table>
+
+    {{ pagerfanta(personQuery) }}
 
 {% endblock %}
