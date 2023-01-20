@@ -20,6 +20,7 @@
             <td>{{ entry.phone }}</td>
             <td>{{ entry.email }}</td>
             <td><a href="{{ path('person_edit', {'name': entry.name, 'id': entry.id}) }}">Edit</a></td>
+            <td><a href="{{ path('person_delete', {'name': entry.name, 'id': entry.id}) }}">Delete</a></td>
         </tr>
 
     {% endfor %}

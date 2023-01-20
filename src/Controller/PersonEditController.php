@@ -24,7 +24,7 @@ class PersonEditController extends AbstractController
             return $this->redirectToRoute('person_edit', ['name' => $name, 'id' => $person[0]->getId()]);
         }
 
-        return $this->render('person_edit/index.html.twig', [
+        return $this->render('homepage/index.html.twig', [
             'person' => $person,
         ]);
     }
