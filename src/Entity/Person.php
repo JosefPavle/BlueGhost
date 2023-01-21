@@ -20,8 +20,8 @@ class Person
     #[ORM\Column(length: 255)]
     private ?string $surname = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $phone = null;
+    #[ORM\Column(type: Types::BIGINT, nullable: true)]
+    private ?string $phone = null;
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;

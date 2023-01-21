@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Person;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,7 +17,7 @@ class PersonFormType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('surname', TextType::class)
-            ->add('phone', TelType::class, ['required'   => false])
+            ->add('phone', null, ['required'   => false])
             ->add('email', EmailType::class)
             ->add('description', TextareaType::class, ['required'   => false])
         ;

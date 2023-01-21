@@ -20,7 +20,8 @@ export function getPersonDescription(id) {
 }
 
 let matches = document.querySelectorAll(".getDetail");
-let  popupDiv = document.getElementById("popup");
+let popupDiv = document.getElementById("popup");
+let popupText = document.getElementById("popupText");
 
 matches.forEach(
     function (element) {
@@ -30,8 +31,24 @@ matches.forEach(
             async function (event){
                 event.preventDefault();
 
-                popupDiv.innerHTML = await getPersonDescription(id);
+                popupText.innerHTML = await getPersonDescription(id);
+                popupDiv.style.visibility = "visible"
             }
         )
+    }
+)
+
+document.addEventListener("keyup",
+    function (key){
+        if (key.code === "Escape"){
+            popupDiv.style.visibility = "hidden"
+        }
+    }
+)
+document.addEventListener("click",
+    function (event) {
+        if (event.target.id === "popup" || event.target.id === "buttonClose"){
+            popupDiv.style.visibility = "hidden"
+        }
     }
 )
