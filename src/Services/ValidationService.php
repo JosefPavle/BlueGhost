@@ -18,10 +18,8 @@ class ValidationService
     public function ValidateData(Person $person):bool
     {
         $isEmailValid = $this->ValidateEmail($person->getEmail());
-        $isNameValid = $this->ValidateEmail($person->getEmail());
-        $isSurnameValid = $this->ValidateEmail($person->getEmail());
 
-        if ($isEmailValid && $isNameValid && $isSurnameValid){
+        if ($isEmailValid){
             return true;
         }
 
