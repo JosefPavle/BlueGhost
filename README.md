@@ -25,3 +25,6 @@
   - kliknete na wamp ikonu v pravo dole
   - vyberete Your VirtualHosts
   - vyberete VirtualHost Management
+  - vyplňte pole
+    - název
+    - absolutní cesta do složky - public
