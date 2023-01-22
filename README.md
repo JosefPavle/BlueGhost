@@ -13,9 +13,9 @@
 2.  zkopírujte složku .env a kopii prejmenujte na .env.local a změnte si databazové údaje (DATABASE_URL="mysql://uzivatelskeJmeno:hesloDatabaze@127.0.0.1:3306/nazevDatabaze?serverVersion=8&charset=utf8mb4")
   
 3.  v konzoli běžte do složky kam jste nainstalovali program a napište:
+  - composer install
   - php bin/console doctrine:database:create
   - php bin/console doctrine:migrations:migrate
-  - composer install
   - npm install --global yarn
   - yarn install
   - yarn encore dev
