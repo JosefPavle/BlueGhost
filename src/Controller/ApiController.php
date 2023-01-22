@@ -16,8 +16,6 @@ class ApiController extends AbstractController
     {
         $json = $serializer->serialize($person->getDescription(), "json");
 
-
-        //return new Response($person->getDescription(), 200);
         return new JsonResponse($json, 200, [], true);
     }
 }

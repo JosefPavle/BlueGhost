@@ -29,6 +29,8 @@ class PersonEditController extends AbstractController
         $pagerfanta->setNormalizeOutOfRangePages(true);
 
         if($pagerfanta->getNbResults() == 0){
+            $this->addFlash('notification', 'No Person With Name "' . $name . '" Found!');
+
             return $this->redirectToRoute('homepage');
         }
         else if ($pagerfanta->getNbResults() == 1){
@@ -47,7 +49,8 @@ class PersonEditController extends AbstractController
     {
         $person = $personRepository->find($id);
 
-        if ($person == null){
+        if ($person == null || $person->getName() != $name){
+            $this->addFlash('notification', 'No "' . $name . '" With ID "' . $id . '" Found!');
             return $this->redirectToRoute('person_edit_index', ['name' => $name]);
         }
 
@@ -59,6 +62,8 @@ class PersonEditController extends AbstractController
 
             $entityManager->persist($person);
             $entityManager->flush();
+
+            $this->addFlash('notification', 'Person "' . $name . '" Successfully Updated!');
 
             return $this->redirectToRoute('homepage');
         }

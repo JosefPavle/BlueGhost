@@ -27,6 +27,8 @@ class PersonCreateController extends AbstractController
                 $entityManager->persist($person);
                 $entityManager->flush();
 
+                $this->addFlash('notification', 'Person Successfully Created!');
+
                 return $this->redirectToRoute('homepage');
             }
         }

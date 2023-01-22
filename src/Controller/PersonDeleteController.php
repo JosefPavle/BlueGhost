@@ -19,6 +19,8 @@ class PersonDeleteController extends AbstractController
         if ($person != null){
             $entityManager->remove($person);
             $entityManager->flush();
+
+            $this->addFlash('notification', 'Person Successfully Deleted!');
         }
 
         $route = $request->headers->get('referer');
